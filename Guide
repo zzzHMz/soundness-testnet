@@ -1,0 +1,47 @@
+Soundness CLI — Quick Start & Recovery Guide
+
+
+Step 1 – Update your system
+
+```sudo apt update && sudo apt upgrade -y```
+
+
+Step 2 – Install Soundnessup
+
+```curl -sSL https://raw.githubusercontent.com/soundnesslabs/soundness-layer/main/soundnessup/install | bash```
+
+
+Step 3 – Install Rust
+
+```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs/ | sh```
+
+
+Step 4 – Reload your shell
+
+```source ~/.bashrc```
+
+
+Step 5 – Install Soundness CLI
+
+```soundnessup install```
+
+
+Step 6 – Update Soundness CLI
+
+```soundnessup update```
+
+
+Step 7 – Generate a new key
+
+```soundness-cli generate-key --name my-key```
+
+⚠️ This will display your 24-word seed phrase  store it safely, offline.
+
+
+Step 8 – Import an existing key
+
+If you already have your 24-word seed phrase, you can recover your account without keystore.json:
+```soundness-cli import-key --name my-key --mnemonic "word1 word2 word3 ... word24"```
+
+Replace "word1 ... word24" with your actual seed phrase.
+You can choose a different --name if you want to store multiple keys.
